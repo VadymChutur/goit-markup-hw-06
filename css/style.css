@@ -2,6 +2,7 @@
   --main-text: #212121;
   --secondary-text: #757575;
   --third-text: #ffffff99;
+  --four-text: rgba(117, 117, 117, 0.5);
   --main-title: #ffffff;
   --secondary-title: #212121;
   --accent-color: #2196f3;
@@ -272,6 +273,11 @@ body {
   color: var(--secondary-title);
   border-color: transparent;
   background-color: var(--secondary-background);
+
+  transition: color 250ms cubic-bezier(var(--cubic-bezier)),
+    border-color 250ms cubic-bezier(var(--cubic-bezier)),
+    background-color 250ms cubic-bezier(var(--cubic-bezier)),
+    box-shadow 250ms cubic-bezier(var(--cubic-bezier));
 }
 
 .hero-btn:hover,
@@ -840,28 +846,71 @@ body {
 }
 
 .modal-input {
+  position: relative;
   display: flex;
+  align-items: center;
   margin-bottom: 28px;
+}
+
+.modal-label {
+  position: absolute;
+  top: -4px;
+  transform: translateY(-100%);
+  left: 0;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text);
 }
 
 .modal-input-field {
   flex-grow: 1;
+  padding: 12px 12px 12px 42px;
   min-height: 40px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
 }
 
+.modal-icon-field {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: var(--main-text);
+  fill: currentColor;
+}
+
 .modal-text-area {
   display: flex;
+  position: relative;
   margin-bottom: 20px;
 }
 
 .modal-text-area-field {
   flex-grow: 1;
+  padding: 12px 16px;
   min-height: 120px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   resize: none;
+}
+
+.modal-text-area-field::placeholder {
+  color: var(--four-text);
+}
+
+.modal-comment {
+  position: absolute;
+  top: -4px;
+  transform: translateY(-100%);
+  left: 0;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--secondary-text);
 }
 
 .modal-privacy {
@@ -873,9 +922,31 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 32px;
   min-width: 200px;
   min-height: 50px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--secondary-title);
+  border-color: transparent;
+  background-color: var(--secondary-background);
+
+  transition: color 250ms cubic-bezier(var(--cubic-bezier)),
+    border-color 250ms cubic-bezier(var(--cubic-bezier)),
+    background-color 250ms cubic-bezier(var(--cubic-bezier)),
+    box-shadow 250ms cubic-bezier(var(--cubic-bezier));
+}
+
+.modal-submit:hover,
+.modal-submit:focus {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--main-title);
+  box-shadow: var(--box-shadow-four);
 }
 
 .no-scroll {
