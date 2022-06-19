@@ -684,9 +684,18 @@ body {
   color: var(--four-text);
 }
 
+.footer-input-field input:-webkit-autofill {
+  background-color: var(--fifth-background);
+  color: var(--five-text);
+}
+
 .footer-input-field:focus,
 .footer-input-field:hover {
   border-color: var(--accent-color);
+}
+
+.footer-input-field:-webkit-autofill {
+  background-color: #ffffff;
 }
 
 .footer-submit {
@@ -976,7 +985,7 @@ body {
 }
 
 /* code for note backgroun with use aftofill */
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
@@ -987,8 +996,9 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid var(--accent-color);
   -webkit-text-fill-color: var(--main-text);
-  transition: background-color 50000s ease-in-out 0s;
-}
+  background-color: var(--secondary-background) important;
+  transition: background-color 250ms ease-in-out 0s;
+} */
 /* end code for autofill */
 
 .modal-text-area {
